@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<p>When you register an account, you will register both a Guardian and Ward. Please be warned that Guardians and Wards have different account system, so be sure to sign in the the right account!</p>
+<form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="usernameWard" placeholder="Username of Ward" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="passwordWard" placeholder="Password of Ward" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmationWard" placeholder="Confirm Password of Ward" type="password">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="usernameGuardian" placeholder="Username of Guardian" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="passwordGuardian" placeholder="Password of Guardian" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmationGuardian" placeholder="Confirm Password of Guardian" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Request
+{% endblock %}
+
+{% block main %}
+{% for request in requests%}
+
+<form action="/request" method="post">
+    <label for="status">Item Name: {{ request.item_name }} <br> Price: {{ request.price_in_usd }} <br> Description: {{ request.description }} <br> Reason for buying: {{ request.reason_for_buying }} <br> Level of need: {{ request.want_need }} <br> Link: {{ request.url }} </label>
+    <br>
+    <select name = "status" id = "status">
+            <option value = "Approve">Approve</option>
+            <option value = "Deny">Deny</option>
+    </select>
+    <hr>
+    <div class="form-group">
+            <textarea autocomplete="off" class="form-control" name="reason" placeholder="Reason for Approval/Deny" type="text"></textarea>
+    </div>
+    <input type="hidden" name="id" value= "{{ request.id }}">
+    <button autocomplete="off" class="btn btn-primary" type="submit">Approve/Deny</button>
+</form>
+{% endfor %}
+{% endblock %}

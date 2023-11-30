@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+{% block main %}
+<style>
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Item Name</th>
+      <th scope="col">Price in USD</th>
+      <th scope="col">Description</th>
+      <th scope="col">Reason For Buying</th>
+      <th scope="col">Level of Need</th>
+      <th scope="col">Status</th>
+      <th scope="col">Reason for Approval/Rejecting</th>
+      <th scope="col">Time of Request</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for request in requests %}
+    <tr>
+      <td>
+      {{ request.item_name }}
+      </td>
+      <td>
+      {{ request.price_in_usd }}
+      </td>
+      <td>
+      {{ request.description }}
+      </td>
+      <td>
+      {{ request.reason_for_buying }}
+      </td>
+      <td>
+      {{ request.want_need }}
+      </td>
+      <td>
+      {{ request.status }}
+      </td>
+      <td>
+      {{ request.reason_for_rejecting }}
+      </td>
+      <td>
+      {{ request.date_time }}
+      </td>
+      <td>
+      {{ request.url }}
+      </td>
+    </tr>
+  {% endfor %}
+  <tbody>
+ </table>
+{% endblock %}

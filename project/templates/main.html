@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<h1>Welcome to Financial Guardian, {{ username }}!</h1>
+{% if accountType == "Guardian" %}
+<h2>You have {{ number }} of request(s) pending your approval, click <a href="/request">here</a> to handle them</h2>
+{% elif accountType == "Ward" %}
+<h2>You have {{ number }} of request(s) that were approved/denied, click <a href="/history">here</a> to view them</h2>
+{% endif %}
+{% endblock %}
